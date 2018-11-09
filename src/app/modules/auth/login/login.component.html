@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <mat-card class="login-card mx-auto mt-5">
+      <mat-card-header class="login-card-header">
+        <h2>Faça login na sua conta</h2>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form #f="ngForm">
+          <mat-form-field class="w-100 mt-5">
+            <input matInput placeholder="Email" type="email" ngModel name="email" email required>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Password" type="password" ngModel name="password" password required>
+          </mat-form-field>
+        </form>
+
+      </mat-card-content>
+      <button class="w-100" mat-flat-button color="primary" (click)="onLogin(f)">Login</button>
+      <div *ngIf="error" class="alert alert-danger mt-3">
+        Email ou senha incorretos!
+      </div>
+      <hr>
+      <div class="form-group">
+        <button type="buton" class="btn btn-block facebook" (click)="signInWithFacebook()">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+          Login with Facebook
+        </button>
+        <button type="button" class="btn btn-block google" (click)="signInWithGoogle()">
+          <i class="fab fa-google" aria-hidden="true"></i>
+          Login with Google
+        </button>
+      </div>
+    </mat-card>
+
+
+  </div>
+</div>
